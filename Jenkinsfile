@@ -2,11 +2,12 @@ pipeline {
     agent any
 
     stages {
-        stage('SCM checkout')
+        stage('SCM checkout') {
             steps {
                git 'https://github.com/Kiranug/maven-project.git'
           }
-        stage('Build') {
+        }
+         stage('Build') {
             steps {
                 echo 'Building..'
                 sh 'mvn package'
